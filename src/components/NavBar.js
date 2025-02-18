@@ -1,8 +1,8 @@
-import React from "react";
-import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import React, { useState } from "react";
+import GoogleSignin from "../img/btn_google_signin_dark_pressed_web.png";
 
 const NavBar = () => {
   const [user] = useAuthState(auth);
@@ -15,7 +15,6 @@ const NavBar = () => {
   const signOut = () => {
     auth.signOut();
   };
-
   return (
     <nav className="nav-bar">
       <h1>React Chat</h1>
@@ -36,5 +35,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;
